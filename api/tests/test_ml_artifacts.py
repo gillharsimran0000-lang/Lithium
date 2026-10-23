@@ -17,6 +17,7 @@ def test_published_scores_match_out_of_fold_predictions():
     assert abs(mean_absolute_error(y, predictions) - score['mae']) < .1
     assert len({row['id'] for row in rows}) == metrics['n_samples'] == 221
     assert metrics == json.loads((ROOT / 'web/public/data/ml_metrics.json').read_text())
+    assert metrics == json.loads((ROOT / 'api/data/processed/ml_metrics.json').read_text())
 
 
 def test_model_family_and_grid_match_published_artifacts():

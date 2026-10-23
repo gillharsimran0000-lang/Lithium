@@ -155,11 +155,9 @@ Parameters come from published studies where available. Where no reliable value 
 
 * **Website:** deploys to Vercel from the `web/` folder.
   * Set `NEXT_PUBLIC_API_URL` to the API's address.
-* **API:** needs any Python host, such as Render, Railway or Fly.io.
-  * Build command: `pip install -r requirements.txt`.
-  * Start command: `uvicorn app.main:app --host 0.0.0.0 --port $PORT`.
-  * Root directory: `api/`.
-  * It also reads `data/` from the repository root.
+* **API:** deploys to Vercel as a second project from the `api/` folder (FastAPI preset, entrypoint `app/main.py`).
+  * Any other Python host works too: `pip install -r requirements.txt`, then `uvicorn app.main:app --host 0.0.0.0 --port $PORT` from `api/`.
+  * It reads its data from `api/data/`, which `ml/export_web_data.py` copies from `data/`.
   * Set `ALLOWED_ORIGINS` to the website's address.
 
 ## AI use

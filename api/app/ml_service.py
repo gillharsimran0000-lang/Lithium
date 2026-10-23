@@ -11,7 +11,9 @@ import shapefile
 from .ml_features import make_features
 from shapely.geometry import Point, shape
 
-ROOT = Path(__file__).resolve().parent.parent.parent
+# api/data holds copies of the runtime files from the repo's data/ (written by ml/export_web_data.py),
+# so the api/ folder can be deployed on its own.
+ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data" / "processed"
 USGS = ROOT / "data" / "raw" / "usgs_smackover_li"
 MODEL_PATH = Path(__file__).resolve().parent.parent / "models" / "lithium_model.joblib"
