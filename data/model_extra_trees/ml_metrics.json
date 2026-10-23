@@ -1,0 +1,1740 @@
+{
+ "target": "Lithium concentration in brine (mg/L)",
+ "n_samples": 221,
+ "n_spatial_blocks": 22,
+ "block_size_km": 20,
+ "chosen_model": "extra_trees",
+ "chosen_params": {
+  "max_depth": null,
+  "max_features": 0.6,
+  "min_samples_leaf": 1,
+  "n_estimators": 350
+ },
+ "results": {
+  "mean": {
+   "spatial_cv": {
+    "mae": 106.9,
+    "rmse": 130.8,
+    "r2": -0.058
+   },
+   "random_cv": {
+    "mae": 103.8,
+    "rmse": 127.6,
+    "r2": -0.007
+   }
+  },
+  "idw": {
+   "spatial_cv": {
+    "mae": 86.3,
+    "rmse": 118.5,
+    "r2": 0.133
+   },
+   "random_cv": {
+    "mae": 30.9,
+    "rmse": 49.8,
+    "r2": 0.847
+   }
+  },
+  "random_forest": {
+   "spatial_cv": {
+    "mae": 49.2,
+    "rmse": 70.9,
+    "r2": 0.689
+   },
+   "random_cv": {
+    "mae": 32.6,
+    "rmse": 53.9,
+    "r2": 0.82
+   }
+  },
+  "gradient_boosting": {
+   "spatial_cv": {
+    "mae": 58.3,
+    "rmse": 84.2,
+    "r2": 0.562
+   },
+   "random_cv": {
+    "mae": 34.4,
+    "rmse": 57.3,
+    "r2": 0.797
+   }
+  },
+  "extra_trees": {
+   "spatial_cv": {
+    "mae": 44.9,
+    "rmse": 63.6,
+    "r2": 0.75
+   },
+   "random_cv": {
+    "mae": 28.9,
+    "rmse": 48.9,
+    "r2": 0.852
+   }
+  }
+ },
+ "usgs_holdout": {
+  "usgs_model": {
+   "mae": 26.2,
+   "rmse": 35.9,
+   "r2": 0.934
+  },
+  "this_model": {
+   "mae": 23.2,
+   "rmse": 33.9,
+   "r2": 0.941
+  },
+  "n": 45
+ },
+ "interval": {
+  "target": 0.9,
+  "half_width_mg_l": 100.6,
+  "spatial_cv_coverage": 0.9004524886877828,
+  "fold_validation_coverage": 0.9140271493212669,
+  "note": "Final width calibrated on development out-of-fold residuals. Separate fold coverage tests widths estimated without the outer test outcomes; no guarantee for new regions."
+ },
+ "importance": [
+  {
+   "variable": "h2s_class",
+   "label": "Hydrogen sulfide class",
+   "mae_increase_mg_l": 29.5
+  },
+  {
+   "variable": "DEPTH_FILL",
+   "label": "Sample depth",
+   "mae_increase_mg_l": 10.66
+  },
+  {
+   "variable": "FRM_GRP",
+   "label": "Formation sampled",
+   "mae_increase_mg_l": 10.03
+  },
+  {
+   "variable": "smackover_alt",
+   "label": "Smackover top elevation",
+   "mae_increase_mg_l": 8.87
+  },
+  {
+   "variable": "smackover_thick",
+   "label": "Smackover thickness",
+   "mae_increase_mg_l": 2.15
+  },
+  {
+   "variable": "hosston_thickness",
+   "label": "Hosston Formation thickness",
+   "mae_increase_mg_l": 0.8
+  },
+  {
+   "variable": "cottonvalley_thickness",
+   "label": "Cotton Valley Group thickness",
+   "mae_increase_mg_l": 0.5
+  },
+  {
+   "variable": "buckner_facies",
+   "label": "Buckner rock type (facies)",
+   "mae_increase_mg_l": 0.48
+  },
+  {
+   "variable": "buckner_thick",
+   "label": "Buckner Formation thickness",
+   "mae_increase_mg_l": 0.45
+  },
+  {
+   "variable": "smck_temp_int",
+   "label": "Smackover temperature",
+   "mae_increase_mg_l": 0.35
+  },
+  {
+   "variable": "smackover_facies",
+   "label": "Smackover rock type (facies)",
+   "mae_increase_mg_l": -0.32
+  }
+ ],
+ "observed_vs_predicted": [
+  {
+   "id": "58220",
+   "lat": 32.9992,
+   "lon": -92.9641,
+   "observed": 116.0,
+   "predicted": 99.9
+  },
+  {
+   "id": "17343",
+   "lat": 32.999856,
+   "lon": -92.98273573,
+   "observed": 111.0,
+   "predicted": 92.9
+  },
+  {
+   "id": "58226",
+   "lat": 33.0022,
+   "lon": -92.9761,
+   "observed": 101.0,
+   "predicted": 99.6
+  },
+  {
+   "id": "59997",
+   "lat": 33.009,
+   "lon": -93.317,
+   "observed": 12.0,
+   "predicted": 55.7
+  },
+  {
+   "id": "60395",
+   "lat": 33.009,
+   "lon": -93.317,
+   "observed": 0.39,
+   "predicted": 115.5
+  },
+  {
+   "id": "115212",
+   "lat": 33.02270646,
+   "lon": -93.06036905,
+   "observed": 24.0,
+   "predicted": 47.0
+  },
+  {
+   "id": "17340",
+   "lat": 33.02437494,
+   "lon": -93.03522657,
+   "observed": 111.0,
+   "predicted": 64.0
+  },
+  {
+   "id": "BR-4",
+   "lat": 33.04938887,
+   "lon": -92.63355897,
+   "observed": 242.0,
+   "predicted": 232.4
+  },
+  {
+   "id": "45887",
+   "lat": 33.0497,
+   "lon": -92.985,
+   "observed": 34.0,
+   "predicted": 109.0
+  },
+  {
+   "id": "17342",
+   "lat": 33.05087813,
+   "lon": -92.96178398,
+   "observed": 103.0,
+   "predicted": 109.0
+  },
+  {
+   "id": "17341",
+   "lat": 33.05199574,
+   "lon": -92.99623015,
+   "observed": 110.0,
+   "predicted": 108.1
+  },
+  {
+   "id": "115235",
+   "lat": 33.0541890486,
+   "lon": -93.4810973440999,
+   "observed": 102.0,
+   "predicted": 161.3
+  },
+  {
+   "id": "17339",
+   "lat": 33.05650607,
+   "lon": -93.17133483,
+   "observed": 102.0,
+   "predicted": 62.9
+  },
+  {
+   "id": "17338",
+   "lat": 33.05705529,
+   "lon": -93.18839267,
+   "observed": 117.0,
+   "predicted": 68.3
+  },
+  {
+   "id": "17337",
+   "lat": 33.06217392,
+   "lon": -93.39437676,
+   "observed": 44.0,
+   "predicted": 158.9
+  },
+  {
+   "id": "17336",
+   "lat": 33.06294477,
+   "lon": -93.42861836,
+   "observed": 97.0,
+   "predicted": 159.5
+  },
+  {
+   "id": "17335",
+   "lat": 33.06506522,
+   "lon": -93.51424732,
+   "observed": 74.0,
+   "predicted": 158.5
+  },
+  {
+   "id": "BR-5",
+   "lat": 33.0726,
+   "lon": -92.65089,
+   "observed": 232.0,
+   "predicted": 280.6
+  },
+  {
+   "id": "45882",
+   "lat": 33.0764,
+   "lon": -93.5809,
+   "observed": 91.0,
+   "predicted": 174.5
+  },
+  {
+   "id": "17334",
+   "lat": 33.08055936,
+   "lon": -93.54802258,
+   "observed": 110.0,
+   "predicted": 161.0
+  },
+  {
+   "id": "17293",
+   "lat": 33.1127285,
+   "lon": -92.6579262,
+   "observed": 179.0,
+   "predicted": 149.7
+  },
+  {
+   "id": "115224",
+   "lat": 33.122024,
+   "lon": -92.734804,
+   "observed": 173.0,
+   "predicted": 177.8
+  },
+  {
+   "id": "17292",
+   "lat": 33.1270635,
+   "lon": -92.6402891,
+   "observed": 179.0,
+   "predicted": 127.7
+  },
+  {
+   "id": "BR-2",
+   "lat": 33.13541,
+   "lon": -92.94994,
+   "observed": 252.0,
+   "predicted": 264.6
+  },
+  {
+   "id": "BR-2-DUP",
+   "lat": 33.13541,
+   "lon": -92.94994,
+   "observed": 241.0,
+   "predicted": 264.6
+  },
+  {
+   "id": "17333",
+   "lat": 33.1364123,
+   "lon": -92.31300958,
+   "observed": 53.0,
+   "predicted": 53.8
+  },
+  {
+   "id": "17291",
+   "lat": 33.141626,
+   "lon": -92.6401214,
+   "observed": 177.0,
+   "predicted": 107.1
+  },
+  {
+   "id": "115223",
+   "lat": 33.14431,
+   "lon": -92.7248,
+   "observed": 172.0,
+   "predicted": 171.9
+  },
+  {
+   "id": "ST-1",
+   "lat": 33.15130995,
+   "lon": -92.27663002,
+   "observed": 6.77,
+   "predicted": 23.8
+  },
+  {
+   "id": "45893",
+   "lat": 33.155,
+   "lon": -92.818,
+   "observed": 170.0,
+   "predicted": 200.6
+  },
+  {
+   "id": "17271",
+   "lat": 33.156235,
+   "lon": -93.0996599,
+   "observed": 269.0,
+   "predicted": 248.0
+  },
+  {
+   "id": "17269",
+   "lat": 33.1569315,
+   "lon": -93.1334577,
+   "observed": 288.0,
+   "predicted": 256.5
+  },
+  {
+   "id": "45906",
+   "lat": 33.1573,
+   "lon": -93.089,
+   "observed": 277.0,
+   "predicted": 277.3
+  },
+  {
+   "id": "45888",
+   "lat": 33.1605,
+   "lon": -92.809,
+   "observed": 140.0,
+   "predicted": 170.9
+  },
+  {
+   "id": "45889",
+   "lat": 33.1607,
+   "lon": -92.811,
+   "observed": 125.0,
+   "predicted": 170.3
+  },
+  {
+   "id": "115213",
+   "lat": 33.16278187,
+   "lon": -93.18596471,
+   "observed": 312.0,
+   "predicted": 260.8
+  },
+  {
+   "id": "115214",
+   "lat": 33.16278187,
+   "lon": -93.18596471,
+   "observed": 214.0,
+   "predicted": 242.9
+  },
+  {
+   "id": "DM-4",
+   "lat": 33.164105,
+   "lon": -93.303363,
+   "observed": 24.0,
+   "predicted": 77.0
+  },
+  {
+   "id": "45907",
+   "lat": 33.1655,
+   "lon": -93.1182,
+   "observed": 260.0,
+   "predicted": 278.8
+  },
+  {
+   "id": "DM-7",
+   "lat": 33.16578262,
+   "lon": -93.29488747,
+   "observed": 23.0,
+   "predicted": 140.1
+  },
+  {
+   "id": "46087",
+   "lat": 33.166,
+   "lon": -93.106,
+   "observed": 118.0,
+   "predicted": 250.8
+  },
+  {
+   "id": "46086",
+   "lat": 33.166,
+   "lon": -93.106,
+   "observed": 225.0,
+   "predicted": 253.1
+  },
+  {
+   "id": "45892",
+   "lat": 33.1674,
+   "lon": -92.7607,
+   "observed": 180.0,
+   "predicted": 123.7
+  },
+  {
+   "id": "17274",
+   "lat": 33.1694146,
+   "lon": -93.0474697,
+   "observed": 223.0,
+   "predicted": 247.2
+  },
+  {
+   "id": "17273",
+   "lat": 33.169864,
+   "lon": -93.0646371,
+   "observed": 228.0,
+   "predicted": 256.7
+  },
+  {
+   "id": "17272",
+   "lat": 33.1703773,
+   "lon": -93.0818773,
+   "observed": 165.0,
+   "predicted": 113.9
+  },
+  {
+   "id": "17268",
+   "lat": 33.1707075,
+   "lon": -93.0990878,
+   "observed": 244.0,
+   "predicted": 187.0
+  },
+  {
+   "id": "DM-6",
+   "lat": 33.17161995,
+   "lon": -93.33769002,
+   "observed": 109.0,
+   "predicted": 137.5
+  },
+  {
+   "id": "17287",
+   "lat": 33.1721944,
+   "lon": -92.7610259,
+   "observed": 169.0,
+   "predicted": 83.0
+  },
+  {
+   "id": "17285",
+   "lat": 33.1723822,
+   "lon": -92.7782179,
+   "observed": 162.0,
+   "predicted": 135.9
+  },
+  {
+   "id": "DM-2",
+   "lat": 33.17333374,
+   "lon": -93.32046306,
+   "observed": 11.1,
+   "predicted": 44.6
+  },
+  {
+   "id": "17281",
+   "lat": 33.17447163,
+   "lon": -92.88777115,
+   "observed": 172.0,
+   "predicted": 290.1
+  },
+  {
+   "id": "DM-3",
+   "lat": 33.17749995,
+   "lon": -93.32351002,
+   "observed": 15.8,
+   "predicted": 67.6
+  },
+  {
+   "id": "17260",
+   "lat": 33.1784229,
+   "lon": -93.4241601,
+   "observed": 364.0,
+   "predicted": 299.5
+  },
+  {
+   "id": "DM-5-DUP",
+   "lat": 33.18184528,
+   "lon": -93.39197854,
+   "observed": 97.4,
+   "predicted": 141.8
+  },
+  {
+   "id": "DM-5",
+   "lat": 33.18184528,
+   "lon": -93.39197854,
+   "observed": 105.0,
+   "predicted": 141.8
+  },
+  {
+   "id": "45894",
+   "lat": 33.1837,
+   "lon": -92.7477,
+   "observed": 160.0,
+   "predicted": 103.6
+  },
+  {
+   "id": "115211",
+   "lat": 33.18381444,
+   "lon": -92.87466858,
+   "observed": 175.0,
+   "predicted": 275.5
+  },
+  {
+   "id": "17275",
+   "lat": 33.1839631,
+   "lon": -93.0468551,
+   "observed": 227.0,
+   "predicted": 243.7
+  },
+  {
+   "id": "115210",
+   "lat": 33.185954,
+   "lon": -92.870857,
+   "observed": 159.0,
+   "predicted": 276.1
+  },
+  {
+   "id": "17286",
+   "lat": 33.1868462,
+   "lon": -92.7779778,
+   "observed": 144.0,
+   "predicted": 132.9
+  },
+  {
+   "id": "45355",
+   "lat": 33.1869,
+   "lon": -93.2162,
+   "observed": 403.0,
+   "predicted": 363.5
+  },
+  {
+   "id": "45874",
+   "lat": 33.1879,
+   "lon": -93.2054,
+   "observed": 80.0,
+   "predicted": 361.6
+  },
+  {
+   "id": "45891",
+   "lat": 33.1879,
+   "lon": -92.8505,
+   "observed": 122.0,
+   "predicted": 241.1
+  },
+  {
+   "id": "46088",
+   "lat": 33.188,
+   "lon": -93.18,
+   "observed": 282.0,
+   "predicted": 269.5
+  },
+  {
+   "id": "BR-6",
+   "lat": 33.18803556,
+   "lon": -92.85734536,
+   "observed": 178.0,
+   "predicted": 251.2
+  },
+  {
+   "id": "17280",
+   "lat": 33.1920187,
+   "lon": -92.8820715,
+   "observed": 191.0,
+   "predicted": 282.0
+  },
+  {
+   "id": "17261",
+   "lat": 33.1925323,
+   "lon": -93.406477,
+   "observed": 338.0,
+   "predicted": 349.8
+  },
+  {
+   "id": "17262",
+   "lat": 33.1925323,
+   "lon": -93.406477,
+   "observed": 316.0,
+   "predicted": 345.9
+  },
+  {
+   "id": "17279",
+   "lat": 33.1932459,
+   "lon": -92.9027188,
+   "observed": 186.0,
+   "predicted": 285.3
+  },
+  {
+   "id": "45901",
+   "lat": 33.1935,
+   "lon": -93.1871,
+   "observed": 357.0,
+   "predicted": 292.1
+  },
+  {
+   "id": "45899",
+   "lat": 33.1943,
+   "lon": -93.2286,
+   "observed": 445.0,
+   "predicted": 393.5
+  },
+  {
+   "id": "46071",
+   "lat": 33.195,
+   "lon": -93.194,
+   "observed": 382.0,
+   "predicted": 367.9
+  },
+  {
+   "id": "45900",
+   "lat": 33.195,
+   "lon": -93.194,
+   "observed": 365.0,
+   "predicted": 289.8
+  },
+  {
+   "id": "46072",
+   "lat": 33.195,
+   "lon": -93.194,
+   "observed": 358.0,
+   "predicted": 289.8
+  },
+  {
+   "id": "45902",
+   "lat": 33.1963,
+   "lon": -93.2165,
+   "observed": 425.0,
+   "predicted": 399.5
+  },
+  {
+   "id": "45351",
+   "lat": 33.1975,
+   "lon": -93.2008,
+   "observed": 378.0,
+   "predicted": 371.5
+  },
+  {
+   "id": "45903",
+   "lat": 33.1998,
+   "lon": -93.1811,
+   "observed": 440.0,
+   "predicted": 292.7
+  },
+  {
+   "id": "17288",
+   "lat": 33.2008795,
+   "lon": -92.743406,
+   "observed": 105.0,
+   "predicted": 120.5
+  },
+  {
+   "id": "45905",
+   "lat": 33.2019,
+   "lon": -93.1659,
+   "observed": 343.0,
+   "predicted": 380.2
+  },
+  {
+   "id": "17282",
+   "lat": 33.2030788,
+   "lon": -92.8304582,
+   "observed": 107.0,
+   "predicted": 128.7
+  },
+  {
+   "id": "45352",
+   "lat": 33.2037,
+   "lon": -93.2295,
+   "observed": 412.0,
+   "predicted": 409.8
+  },
+  {
+   "id": "17283",
+   "lat": 33.2042833,
+   "lon": -92.8478243,
+   "observed": 109.0,
+   "predicted": 150.9
+  },
+  {
+   "id": "45904",
+   "lat": 33.2043,
+   "lon": -93.1748,
+   "observed": 391.0,
+   "predicted": 385.8
+  },
+  {
+   "id": "45354",
+   "lat": 33.2072,
+   "lon": -93.1547,
+   "observed": 331.0,
+   "predicted": 204.0
+  },
+  {
+   "id": "45350",
+   "lat": 33.2087,
+   "lon": -93.2043,
+   "observed": 367.0,
+   "predicted": 338.1
+  },
+  {
+   "id": "45909",
+   "lat": 33.2106,
+   "lon": -93.1757,
+   "observed": 331.0,
+   "predicted": 373.7
+  },
+  {
+   "id": "BR-1",
+   "lat": 33.210634,
+   "lon": -92.805588,
+   "observed": 84.1,
+   "predicted": 254.1
+  },
+  {
+   "id": "45897",
+   "lat": 33.212,
+   "lon": -92.3752,
+   "observed": 35.0,
+   "predicted": 30.7
+  },
+  {
+   "id": "17289",
+   "lat": 33.2153595,
+   "lon": -92.7434277,
+   "observed": 72.0,
+   "predicted": 75.7
+  },
+  {
+   "id": "17290",
+   "lat": 33.2156074,
+   "lon": -92.760679,
+   "observed": 90.0,
+   "predicted": 74.7
+  },
+  {
+   "id": "45910",
+   "lat": 33.2165,
+   "lon": -93.19,
+   "observed": 329.0,
+   "predicted": 352.3
+  },
+  {
+   "id": "17284",
+   "lat": 33.2166743,
+   "lon": -92.8128809,
+   "observed": 122.0,
+   "predicted": 120.2
+  },
+  {
+   "id": "45349",
+   "lat": 33.2192,
+   "lon": -93.2043,
+   "observed": 340.0,
+   "predicted": 332.7
+  },
+  {
+   "id": "45353",
+   "lat": 33.2195,
+   "lon": -93.2169,
+   "observed": 386.0,
+   "predicted": 346.0
+  },
+  {
+   "id": "45908",
+   "lat": 33.2209,
+   "lon": -93.1637,
+   "observed": 276.0,
+   "predicted": 139.3
+  },
+  {
+   "id": "115201",
+   "lat": 33.22617,
+   "lon": -93.56029,
+   "observed": 380.0,
+   "predicted": 362.6
+  },
+  {
+   "id": "115202",
+   "lat": 33.22617,
+   "lon": -93.56029,
+   "observed": 425.0,
+   "predicted": 362.6
+  },
+  {
+   "id": "115199",
+   "lat": 33.22617,
+   "lon": -93.56029,
+   "observed": 461.0,
+   "predicted": 362.6
+  },
+  {
+   "id": "115200",
+   "lat": 33.22617,
+   "lon": -93.56029,
+   "observed": 439.0,
+   "predicted": 362.6
+  },
+  {
+   "id": "17332",
+   "lat": 33.22945537,
+   "lon": -92.70880622,
+   "observed": 67.0,
+   "predicted": 81.2
+  },
+  {
+   "id": "115198",
+   "lat": 33.23241,
+   "lon": -93.55148,
+   "observed": 302.0,
+   "predicted": 369.1
+  },
+  {
+   "id": "115197",
+   "lat": 33.23241,
+   "lon": -93.55148,
+   "observed": 265.0,
+   "predicted": 369.1
+  },
+  {
+   "id": "115195",
+   "lat": 33.23241,
+   "lon": -93.55148,
+   "observed": 347.0,
+   "predicted": 369.1
+  },
+  {
+   "id": "115196",
+   "lat": 33.23241,
+   "lon": -93.55148,
+   "observed": 352.0,
+   "predicted": 369.1
+  },
+  {
+   "id": "DM-SEP-1",
+   "lat": 33.23268995,
+   "lon": -93.49701002,
+   "observed": 9.75,
+   "predicted": 86.5
+  },
+  {
+   "id": "DM-1",
+   "lat": 33.23268995,
+   "lon": -93.49701002,
+   "observed": 11.3,
+   "predicted": 86.5
+  },
+  {
+   "id": "115205",
+   "lat": 33.235137709,
+   "lon": -93.477684453,
+   "observed": 477.0,
+   "predicted": 371.0
+  },
+  {
+   "id": "115204",
+   "lat": 33.235137709,
+   "lon": -93.477684453,
+   "observed": 467.0,
+   "predicted": 372.3
+  },
+  {
+   "id": "115203",
+   "lat": 33.235137709,
+   "lon": -93.477684453,
+   "observed": 465.0,
+   "predicted": 372.3
+  },
+  {
+   "id": "MP-2",
+   "lat": 33.23631995,
+   "lon": -93.50518002,
+   "observed": 22.3,
+   "predicted": 145.2
+  },
+  {
+   "id": "BR-3",
+   "lat": 33.23903,
+   "lon": -92.93718,
+   "observed": 76.0,
+   "predicted": 134.1
+  },
+  {
+   "id": "MP-1",
+   "lat": 33.24210995,
+   "lon": -93.52079002,
+   "observed": 6.86,
+   "predicted": 92.2
+  },
+  {
+   "id": "115219",
+   "lat": 33.24596,
+   "lon": -93.14969,
+   "observed": 77.0,
+   "predicted": 105.0
+  },
+  {
+   "id": "115220",
+   "lat": 33.24626676,
+   "lon": -93.53114664,
+   "observed": 75.0,
+   "predicted": 371.2
+  },
+  {
+   "id": "45896",
+   "lat": 33.2472,
+   "lon": -92.6038,
+   "observed": 50.0,
+   "predicted": 54.2
+  },
+  {
+   "id": "MS-2",
+   "lat": 33.24815266,
+   "lon": -93.09944731,
+   "observed": 168.0,
+   "predicted": 205.6
+  },
+  {
+   "id": "MS-1",
+   "lat": 33.25302473,
+   "lon": -93.15404689,
+   "observed": 207.0,
+   "predicted": 103.3
+  },
+  {
+   "id": "17278",
+   "lat": 33.2532316,
+   "lon": -92.9558438,
+   "observed": 67.0,
+   "predicted": 97.2
+  },
+  {
+   "id": "45895",
+   "lat": 33.2542,
+   "lon": -92.8764,
+   "observed": 5.0,
+   "predicted": 129.4
+  },
+  {
+   "id": "17259",
+   "lat": 33.2546962,
+   "lon": -93.5589927,
+   "observed": 370.0,
+   "predicted": 365.8
+  },
+  {
+   "id": "17258",
+   "lat": 33.2546962,
+   "lon": -93.5589927,
+   "observed": 423.0,
+   "predicted": 366.3
+  },
+  {
+   "id": "115233",
+   "lat": 33.25839,
+   "lon": -93.06402,
+   "observed": 15.0,
+   "predicted": 114.4
+  },
+  {
+   "id": "115230",
+   "lat": 33.25846,
+   "lon": -93.05975,
+   "observed": 8.0,
+   "predicted": 47.9
+  },
+  {
+   "id": "115231",
+   "lat": 33.25866,
+   "lon": -93.0687,
+   "observed": 10.0,
+   "predicted": 47.5
+  },
+  {
+   "id": "46089",
+   "lat": 33.259,
+   "lon": -92.964,
+   "observed": 55.0,
+   "predicted": 97.7
+  },
+  {
+   "id": "46090",
+   "lat": 33.259,
+   "lon": -92.964,
+   "observed": 78.0,
+   "predicted": 96.3
+  },
+  {
+   "id": "115234",
+   "lat": 33.25918,
+   "lon": -93.06046,
+   "observed": 67.0,
+   "predicted": 112.7
+  },
+  {
+   "id": "115232",
+   "lat": 33.26093,
+   "lon": -93.0582,
+   "observed": 64.0,
+   "predicted": 111.5
+  },
+  {
+   "id": "17267",
+   "lat": 33.261717,
+   "lon": -93.2676776,
+   "observed": 327.0,
+   "predicted": 207.1
+  },
+  {
+   "id": "45911",
+   "lat": 33.2651,
+   "lon": -93.0679,
+   "observed": 7.0,
+   "predicted": 107.6
+  },
+  {
+   "id": "45912",
+   "lat": 33.2654,
+   "lon": -93.0722,
+   "observed": 53.0,
+   "predicted": 104.8
+  },
+  {
+   "id": "17277",
+   "lat": 33.2677061,
+   "lon": -92.95535,
+   "observed": 74.0,
+   "predicted": 92.8
+  },
+  {
+   "id": "17276",
+   "lat": 33.2709025,
+   "lon": -93.0610278,
+   "observed": 76.0,
+   "predicted": 96.9
+  },
+  {
+   "id": "17270",
+   "lat": 33.2727776,
+   "lon": -93.1464779,
+   "observed": 116.0,
+   "predicted": 94.7
+  },
+  {
+   "id": "17263",
+   "lat": 33.2777446,
+   "lon": -93.3349671,
+   "observed": 371.0,
+   "predicted": 216.2
+  },
+  {
+   "id": "17331",
+   "lat": 33.28149582,
+   "lon": -92.93769162,
+   "observed": 47.0,
+   "predicted": 77.3
+  },
+  {
+   "id": "17266",
+   "lat": 33.2906188,
+   "lon": -93.2667503,
+   "observed": 136.0,
+   "predicted": 67.9
+  },
+  {
+   "id": "17264",
+   "lat": 33.2910462,
+   "lon": -93.2841858,
+   "observed": 126.0,
+   "predicted": 68.2
+  },
+  {
+   "id": "17265",
+   "lat": 33.2910462,
+   "lon": -93.2841858,
+   "observed": 149.0,
+   "predicted": 68.2
+  },
+  {
+   "id": "115221",
+   "lat": 33.297154,
+   "lon": -92.79236,
+   "observed": 56.0,
+   "predicted": 66.7
+  },
+  {
+   "id": "17256",
+   "lat": 33.298114,
+   "lon": -93.5574965,
+   "observed": 187.0,
+   "predicted": 214.9
+  },
+  {
+   "id": "17257",
+   "lat": 33.298114,
+   "lon": -93.5574965,
+   "observed": 132.0,
+   "predicted": 213.4
+  },
+  {
+   "id": "17294",
+   "lat": 33.3034927,
+   "lon": -92.795683,
+   "observed": 36.0,
+   "predicted": 53.8
+  },
+  {
+   "id": "115215",
+   "lat": 33.30529352,
+   "lon": -93.20779573,
+   "observed": 269.0,
+   "predicted": 242.3
+  },
+  {
+   "id": "115216",
+   "lat": 33.30529352,
+   "lon": -93.20779573,
+   "observed": 302.0,
+   "predicted": 206.9
+  },
+  {
+   "id": "46091",
+   "lat": 33.306,
+   "lon": -93.51,
+   "observed": 0.27,
+   "predicted": 226.1
+  },
+  {
+   "id": "45917",
+   "lat": 33.3176,
+   "lon": -93.8482,
+   "observed": 28.0,
+   "predicted": 98.5
+  },
+  {
+   "id": "17320",
+   "lat": 33.31870906,
+   "lon": -93.24894099,
+   "observed": 85.0,
+   "predicted": 77.7
+  },
+  {
+   "id": "17319",
+   "lat": 33.31870906,
+   "lon": -93.24894099,
+   "observed": 76.0,
+   "predicted": 80.8
+  },
+  {
+   "id": "17314",
+   "lat": 33.32095425,
+   "lon": -93.33350972,
+   "observed": 80.0,
+   "predicted": 72.4
+  },
+  {
+   "id": "17313",
+   "lat": 33.32213921,
+   "lon": -93.38433827,
+   "observed": 98.0,
+   "predicted": 97.4
+  },
+  {
+   "id": "17312",
+   "lat": 33.32245104,
+   "lon": -93.40161374,
+   "observed": 98.0,
+   "predicted": 103.0
+  },
+  {
+   "id": "17311",
+   "lat": 33.32251341,
+   "lon": -93.41888921,
+   "observed": 97.0,
+   "predicted": 115.7
+  },
+  {
+   "id": "17310",
+   "lat": 33.32495739,
+   "lon": -93.48770266,
+   "observed": 37.0,
+   "predicted": 121.4
+  },
+  {
+   "id": "115228",
+   "lat": 33.338031,
+   "lon": -93.631279,
+   "observed": 134.0,
+   "predicted": 63.4
+  },
+  {
+   "id": "115217",
+   "lat": 33.34969643,
+   "lon": -93.54913441,
+   "observed": 67.0,
+   "predicted": 121.5
+  },
+  {
+   "id": "115218",
+   "lat": 33.34969643,
+   "lon": -93.54913441,
+   "observed": 59.0,
+   "predicted": 121.3
+  },
+  {
+   "id": "17318",
+   "lat": 33.35089008,
+   "lon": -93.38346514,
+   "observed": 107.0,
+   "predicted": 81.6
+  },
+  {
+   "id": "17299",
+   "lat": 33.35112201,
+   "lon": -94.03707444,
+   "observed": 115.0,
+   "predicted": 114.3
+  },
+  {
+   "id": "17295",
+   "lat": 33.3514003,
+   "lon": -92.8817862,
+   "observed": 34.0,
+   "predicted": 50.7
+  },
+  {
+   "id": "17309",
+   "lat": 33.35578121,
+   "lon": -93.55511797,
+   "observed": 79.0,
+   "predicted": 115.9
+  },
+  {
+   "id": "45883",
+   "lat": 33.3564,
+   "lon": -93.5522,
+   "observed": 62.0,
+   "predicted": 127.0
+  },
+  {
+   "id": "45884",
+   "lat": 33.3565,
+   "lon": -93.5487,
+   "observed": 46.0,
+   "predicted": 121.0
+  },
+  {
+   "id": "115206",
+   "lat": 33.35722,
+   "lon": -93.40663,
+   "observed": 23.0,
+   "predicted": 38.3
+  },
+  {
+   "id": "BK-1",
+   "lat": 33.35909995,
+   "lon": -93.37392002,
+   "observed": 95.4,
+   "predicted": 81.0
+  },
+  {
+   "id": "17302",
+   "lat": 33.35943437,
+   "lon": -93.67564269,
+   "observed": 145.0,
+   "predicted": 67.3
+  },
+  {
+   "id": "115208",
+   "lat": 33.35968,
+   "lon": -93.40762,
+   "observed": 92.0,
+   "predicted": 102.6
+  },
+  {
+   "id": "BK-2-DUP",
+   "lat": 33.36022995,
+   "lon": -93.38562002,
+   "observed": 98.8,
+   "predicted": 91.2
+  },
+  {
+   "id": "BK-2",
+   "lat": 33.36022995,
+   "lon": -93.38562002,
+   "observed": 98.7,
+   "predicted": 91.2
+  },
+  {
+   "id": "115207",
+   "lat": 33.36063,
+   "lon": -93.40683,
+   "observed": 10.0,
+   "predicted": 34.7
+  },
+  {
+   "id": "45914",
+   "lat": 33.3614,
+   "lon": -93.4107,
+   "observed": 86.0,
+   "predicted": 101.5
+  },
+  {
+   "id": "45915",
+   "lat": 33.3647,
+   "lon": -92.9927,
+   "observed": 43.0,
+   "predicted": 57.0
+  },
+  {
+   "id": "115226",
+   "lat": 33.36515092,
+   "lon": -92.64443962,
+   "observed": 5.0,
+   "predicted": 15.6
+  },
+  {
+   "id": "115227",
+   "lat": 33.36515092,
+   "lon": -92.64443962,
+   "observed": 10.0,
+   "predicted": 28.9
+  },
+  {
+   "id": "115225",
+   "lat": 33.36515092,
+   "lon": -92.64443962,
+   "observed": 8.0,
+   "predicted": 15.6
+  },
+  {
+   "id": "17317",
+   "lat": 33.36573327,
+   "lon": -93.38277911,
+   "observed": 95.0,
+   "predicted": 71.9
+  },
+  {
+   "id": "17316",
+   "lat": 33.36579563,
+   "lon": -93.39980512,
+   "observed": 92.0,
+   "predicted": 74.1
+  },
+  {
+   "id": "17315",
+   "lat": 33.36616983,
+   "lon": -93.41708059,
+   "observed": 72.0,
+   "predicted": 93.8
+  },
+  {
+   "id": "45885",
+   "lat": 33.3672,
+   "lon": -93.5954,
+   "observed": 72.0,
+   "predicted": 109.7
+  },
+  {
+   "id": "115209",
+   "lat": 33.3676842,
+   "lon": -93.38986772,
+   "observed": 95.0,
+   "predicted": 80.4
+  },
+  {
+   "id": "SM-1",
+   "lat": 33.37162628,
+   "lon": -92.64124163,
+   "observed": 4.28,
+   "predicted": 16.0
+  },
+  {
+   "id": "115229",
+   "lat": 33.378183,
+   "lon": -93.632692,
+   "observed": 136.0,
+   "predicted": 99.0
+  },
+  {
+   "id": "45879",
+   "lat": 33.3897,
+   "lon": -92.6498,
+   "observed": 12.0,
+   "predicted": 29.3
+  },
+  {
+   "id": "SM-2",
+   "lat": 33.39107275,
+   "lon": -92.77074501,
+   "observed": 0.654,
+   "predicted": 14.6
+  },
+  {
+   "id": "SM-2-DUP",
+   "lat": 33.39107275,
+   "lon": -92.77074501,
+   "observed": 0.665,
+   "predicted": 14.6
+  },
+  {
+   "id": "SH-1",
+   "lat": 33.39611995,
+   "lon": -92.66441002,
+   "observed": 6.26,
+   "predicted": 16.7
+  },
+  {
+   "id": "SH-2",
+   "lat": 33.39630995,
+   "lon": -92.66431002,
+   "observed": 11.7,
+   "predicted": 29.1
+  },
+  {
+   "id": "17303",
+   "lat": 33.40028122,
+   "lon": -93.65114479,
+   "observed": 199.0,
+   "predicted": 79.3
+  },
+  {
+   "id": "45877",
+   "lat": 33.4073,
+   "lon": -92.9506,
+   "observed": 22.0,
+   "predicted": 9.6
+  },
+  {
+   "id": "45878",
+   "lat": 33.409,
+   "lon": -92.9506,
+   "observed": 21.0,
+   "predicted": 25.7
+  },
+  {
+   "id": "17308",
+   "lat": 33.41227024,
+   "lon": -93.54646343,
+   "observed": 64.0,
+   "predicted": 148.7
+  },
+  {
+   "id": "17329",
+   "lat": 33.41320711,
+   "lon": -92.95133278,
+   "observed": 24.0,
+   "predicted": 21.4
+  },
+  {
+   "id": "17330",
+   "lat": 33.41320711,
+   "lon": -92.95133278,
+   "observed": 24.0,
+   "predicted": 21.2
+  },
+  {
+   "id": "17296",
+   "lat": 33.41405,
+   "lon": -92.9863558,
+   "observed": 24.0,
+   "predicted": 20.7
+  },
+  {
+   "id": "17328",
+   "lat": 33.4146121,
+   "lon": -93.02125012,
+   "observed": 21.0,
+   "predicted": 24.0
+  },
+  {
+   "id": "45875",
+   "lat": 33.4199,
+   "lon": -93.0207,
+   "observed": 28.0,
+   "predicted": 25.6
+  },
+  {
+   "id": "45876",
+   "lat": 33.4268,
+   "lon": -93.0287,
+   "observed": 24.0,
+   "predicted": 26.2
+  },
+  {
+   "id": "17327",
+   "lat": 33.42922218,
+   "lon": -93.02086734,
+   "observed": 22.0,
+   "predicted": 26.3
+  },
+  {
+   "id": "MW-1",
+   "lat": 33.44381,
+   "lon": -93.52907,
+   "observed": 56.7,
+   "predicted": 87.8
+  },
+  {
+   "id": "45378",
+   "lat": 33.4519,
+   "lon": -93.564,
+   "observed": 69.66,
+   "predicted": 76.3
+  },
+  {
+   "id": "45377",
+   "lat": 33.4534,
+   "lon": -93.5622,
+   "observed": 66.58,
+   "predicted": 75.9
+  },
+  {
+   "id": "45880",
+   "lat": 33.4539,
+   "lon": -93.1183,
+   "observed": 15.0,
+   "predicted": 37.1
+  },
+  {
+   "id": "45881",
+   "lat": 33.4545,
+   "lon": -93.1198,
+   "observed": 16.0,
+   "predicted": 37.5
+  },
+  {
+   "id": "17304",
+   "lat": 33.45816795,
+   "lon": -93.64907552,
+   "observed": 97.0,
+   "predicted": 64.0
+  },
+  {
+   "id": "17305",
+   "lat": 33.45816795,
+   "lon": -93.64907552,
+   "observed": 97.0,
+   "predicted": 64.3
+  },
+  {
+   "id": "17306",
+   "lat": 33.4582654,
+   "lon": -93.63153499,
+   "observed": 95.0,
+   "predicted": 61.8
+  },
+  {
+   "id": "17307",
+   "lat": 33.4582654,
+   "lon": -93.63153499,
+   "observed": 89.0,
+   "predicted": 61.6
+  },
+  {
+   "id": "MW-2",
+   "lat": 33.4587,
+   "lon": -93.5793,
+   "observed": 54.3,
+   "predicted": 88.8
+  },
+  {
+   "id": "115222",
+   "lat": 33.46211998,
+   "lon": -93.6312036,
+   "observed": 84.0,
+   "predicted": 60.9
+  },
+  {
+   "id": "45886",
+   "lat": 33.4636,
+   "lon": -93.6365,
+   "observed": 94.0,
+   "predicted": 60.9
+  },
+  {
+   "id": "17301",
+   "lat": 33.47951938,
+   "lon": -93.89857605,
+   "observed": 126.0,
+   "predicted": 41.9
+  },
+  {
+   "id": "45348",
+   "lat": 33.4939,
+   "lon": -93.4874,
+   "observed": 26.0,
+   "predicted": 46.9
+  },
+  {
+   "id": "45916",
+   "lat": 33.4939,
+   "lon": -93.4874,
+   "observed": 26.0,
+   "predicted": 46.9
+  },
+  {
+   "id": "17300",
+   "lat": 33.50973711,
+   "lon": -93.96690209,
+   "observed": 59.0,
+   "predicted": 34.8
+  },
+  {
+   "id": "17325",
+   "lat": 33.53189032,
+   "lon": -93.13932025,
+   "observed": 11.0,
+   "predicted": 18.8
+  },
+  {
+   "id": "17324",
+   "lat": 33.54697479,
+   "lon": -93.13888438,
+   "observed": 12.0,
+   "predicted": 18.0
+  },
+  {
+   "id": "17326",
+   "lat": 33.56346594,
+   "lon": -93.13350579,
+   "observed": 12.0,
+   "predicted": 18.6
+  },
+  {
+   "id": "17321",
+   "lat": 33.56480657,
+   "lon": -93.22517942,
+   "observed": 10.0,
+   "predicted": 19.3
+  },
+  {
+   "id": "17322",
+   "lat": 33.56480657,
+   "lon": -93.22517942,
+   "observed": 11.0,
+   "predicted": 19.3
+  },
+  {
+   "id": "17323",
+   "lat": 33.56480657,
+   "lon": -93.22517942,
+   "observed": 11.0,
+   "predicted": 19.3
+  }
+ ],
+ "features": [
+  "hosston_thickness",
+  "cottonvalley_thickness",
+  "buckner_thick",
+  "h2s_class",
+  "smackover_alt",
+  "smackover_thick",
+  "smck_temp_int",
+  "DEPTH_FILL",
+  "buckner_facies",
+  "smackover_facies",
+  "FRM_GRP"
+ ],
+ "feature_labels": {
+  "hosston_thickness": "Hosston Formation thickness",
+  "cottonvalley_thickness": "Cotton Valley Group thickness",
+  "buckner_thick": "Buckner Formation thickness",
+  "buckner_facies": "Buckner rock type (facies)",
+  "h2s_class": "Hydrogen sulfide class",
+  "smackover_alt": "Smackover top elevation",
+  "smackover_thick": "Smackover thickness",
+  "smackover_facies": "Smackover rock type (facies)",
+  "smck_temp_int": "Smackover temperature",
+  "DEPTH_FILL": "Sample depth",
+  "FRM_GRP": "Formation sampled"
+ },
+ "development_note": "Extra Trees improved the original spatial cross-validation benchmark. Model families were compared using these development folds; a new independent geographic dataset is still needed to confirm generalization.",
+ "selection": {
+  "name": "extra_trees_leaf1_features0.6",
+  "inner_mse": {
+   "extra_trees_leaf1_features0.6": 3490.826812460082,
+   "extra_trees_leaf1_features1.0": 3601.708412154865,
+   "extra_trees_leaf2_features0.6": 3680.097281716057,
+   "extra_trees_leaf2_features1.0": 3520.1199511070945,
+   "extra_trees_leaf4_features0.6": 3857.036309462685,
+   "extra_trees_leaf4_features1.0": 3500.066384360132
+  },
+  "benchmark": "extra_trees_benchmark.json"
+ }
+}

@@ -1,0 +1,6 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.DS_Store
+# The USGS Produced Waters database is 80 MB; download it with the link in data/README.md.
+data/raw/usgs_pwgd_v3/USGS_NPWGDv3_excel.xlsx
