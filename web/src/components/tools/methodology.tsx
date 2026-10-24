@@ -34,7 +34,7 @@ const DATA_SOURCES = [
 ];
 
 const EQUATIONS = [
-  ["pH adjustment", "[OH⁻] = 10^(pH − 14);  Mg left = min(Mg₀, Ksp,Mg(OH)₂ / [OH⁻]²);  same for Ca(OH)₂\nNaOH = Δ[OH⁻] + Δ[H⁺] + 2 × (Mg + Ca precipitated)   (mol/L)"],
+  ["pH adjustment", "[OH⁻] = 10^(pH − 14);  Mg left = min(Mg₀, Ksp,Mg(OH)₂ / [OH⁻]²);  same for Ca(OH)₂\nNaOH = Δ[OH⁻] + Δ[H⁺] + 2 × (Mg + Ca precipitated) + Li taken up by ion sieves (each releases one H⁺)   (mol/L)"],
   ["Usable capacity", "ion sieves: f = 1 / (1 + 10^(pH½ − pH))      LDH: f = 1 inside its pH window, falling to 0.5 outside"],
   ["Competitive isotherm", "q = q_max·f · K·C / (1 + K·C + K_Mg·Mg),   K_Mg = K / α_Li/Mg"],
   ["Mass balance", "C₀ − C = dose × q   →   K·C² + (B + dose·q_max·f·K − K·C₀)·C − B·C₀ = 0,  B = 1 + K_Mg·Mg"],
@@ -133,12 +133,12 @@ export default function MethodologyPage() {
           </p>
           <p>
             <strong className="text-ink">Optimizer.</strong> Exhaustive grid search over technology, temperature (brine
-            temperature up to 90 °C), pH, contact time (0.5–8 h), sorbent dose (2–30 g/L) and 1–3 stages: about 9,000 setups.
+            temperature up to 90 °C), pH, contact time (0.5–8 h), sorbent dose (2–30 g/L) and 1–3 stages: about 1,600 to 16,000 setups, depending on the sample's temperature and pH.
             Grid search was chosen because it is transparent and cannot miss the best point on its grid.
           </p>
           <p>
-            <strong className="text-ink">Not modelled.</strong> Temperature effects on capacity (studies disagree), sodium and calcium
-            competition, activity coefficients in concentrated brine, brine buffering, column hydrodynamics, sorbent fouling,
+            <strong className="text-ink">Not modelled.</strong> Temperature effects on capacity (studies disagree), temperature effects on pH and solubility (25 °C constants are used),
+            sodium and calcium competition, brine buffering, activity coefficients in concentrated brine, column hydrodynamics, sorbent fouling,
             capital costs, and refining to battery-grade product.
           </p>
         </div>

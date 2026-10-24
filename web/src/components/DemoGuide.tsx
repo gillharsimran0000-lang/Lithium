@@ -44,7 +44,7 @@ const STEPS: Step[] = [
   {
     path: "/#optimize",
     title: "Let the optimizer search",
-    body: "The optimizer tests about 9,000 combinations of sorbent, temperature, pH, time, dose and stages, then recommends one for the chosen priority.",
+    body: "The optimizer tests thousands of combinations of sorbent, temperature, pH, time, dose and stages, then recommends one for the chosen priority.",
     action: "Run the optimizer",
   },
   {

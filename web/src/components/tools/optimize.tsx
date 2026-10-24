@@ -181,7 +181,7 @@ export default function OptimizePage() {
 
         <div className="flex flex-col gap-6">
           {error && <Notice tone="error" title="The optimizer could not run">{error}</Notice>}
-          {busy && <Spinner label="Testing about 9,000 setups" />}
+          {busy && <Spinner label="Testing thousands of setups" />}
           {!o && !busy && <Notice>Choose a priority and run the optimizer.</Notice>}
           {o && !o.feasible && <Notice tone="warn" title="No setup qualifies">{o.message}</Notice>}
           {o && o.feasible && (

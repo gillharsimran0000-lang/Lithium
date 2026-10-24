@@ -23,11 +23,12 @@ export function brineFromSample(s: Sample): Brine {
 }
 
 // Manganese- and titanium-based materials release acid as they take up lithium, so they only work in
-// less acidic water. They start at a higher pH; the aluminum-based material works at the brine's own pH.
+// alkaline water. They start at pH 10 (manganese: about 90% of its capacity in the cited test) and pH 11
+// (titanium: about half, before calcium starts to precipitate). The aluminum-based material works at the brine's own pH.
 export function startingPh(technology: Technology, s?: Sample) {
   const own = Math.round((s?.ph ?? 6) * 100) / 100;
-  if (technology === "lmo") return Math.max(own, 8);
-  if (technology === "hto") return Math.max(own, 9);
+  if (technology === "lmo") return Math.max(own, 10);
+  if (technology === "hto") return Math.max(own, 11);
   return own;
 }
 

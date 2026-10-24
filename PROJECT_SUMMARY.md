@@ -17,7 +17,13 @@
 - **Corrected rock layers (stratigraphy)** in the drawing, matching the published USGS study, with real depths from the data.
 - **New pages:** "What lithium is used for" (step 5) and "Questions people ask" (step 6, 11 questions).
 - **Live simulation** of the recovery setup.
-- **Fix:** manganese- and titanium-based materials now start at a pH where they actually work, so their sliders do something.
+- **Chemistry sources checked against the papers.** Wrong or unconfirmed numbers were corrected:
+  - Titanium material: capacity is now 29.7 mg/g (range 10.6–32.1) and it works best at pH 12, as the cited paper (Dai and others, 2021) reports. Its magnesium selectivity is now a range from 48 to 5,441, since 5,441 came from a different study.
+  - Manganese material: capacity is now 21.2 mg/g (range 6.6–27), as the cited paper (Karshyga and others, 2023) reports, and its pH response is fitted to that paper.
+  - A manganese loss rate we could not find in any paper is now labelled as our assumption.
+- **Chemistry fix:** manganese- and titanium-based materials release acid as they take up lithium. The model now counts the sodium hydroxide needed to neutralize it.
+- **Fix:** manganese- and titanium-based materials now start at pH 10 and 11, where the cited studies show them working.
+- **Result:** the optimizer now usually recommends the aluminum-based material for these brines.
 
 ## 1. The one-sentence version
 
@@ -70,7 +76,7 @@ Southern Arkansas companies already pump this same brine to make bromine.
   - Magnesium sludge appears at high pH.
   - Meters show capture progress and how full the material is.
   - A sentence says what limits the result.
-- An **optimizer** tests about 8,100 setups and recommends the best one for a goal (most lithium, lowest cost, lowest energy, or balanced), and explains why.
+- An **optimizer** tests thousands of setups (about 1,600 to 16,000, depending on the sample) and recommends the best one for a goal (most lithium, lowest cost, lowest energy, or balanced), and explains why.
 
 **Step 3: Compare setups.** Side by side: lithium recovered against energy, water, chemicals, CO₂ and cost. Export a CSV or a printable report.
 
@@ -189,7 +195,7 @@ No public dataset of DLE experiments existed to train on, so recovery is calcula
 - **Backend:** Python 3.12, FastAPI, scikit-learn 1.9.1, pandas, NumPy, Shapely.
 - **Speed:**
   - recovery estimate: about 0.01 s
-  - optimizer, 8,100 setups: about 0.3 s
+  - optimizer, 8,100 setups (sample MSU 3-22): about 0.3 s
   - map prediction: about 0.07 s
 - **Quality:**
   - 17 automated tests, all passing.
@@ -201,7 +207,9 @@ No public dataset of DLE experiments existed to train on, so recovery is calcula
 ## 9. Limitations (say these honestly)
 
 - Recovery numbers come from a chemistry model built on published studies, not experiments on these brines.
-- Not modelled: temperature effects on capacity, sodium and calcium competition, brine buffering, and plant building costs.
+- Not modelled: temperature effects on capacity, temperature effects on pH and solubility, sodium and calcium competition, brine buffering, and plant building costs.
+- Costs cover energy, chemicals and sorbent only, not equipment, labour or refining.
+- The recovery model has not been checked against experiments on Arkansas brine. Several key numbers (lithium affinity, uptake speed, prices) are our assumptions, and the app labels them.
 - The ML model shows regional patterns (±88 mg/L), not exact single-well values.
 - Lithium in the ground (resource) is not lithium recoverable at a profit (reserve).
 - Not covered: leaks, earthquakes, land use, traffic. Those need site studies.

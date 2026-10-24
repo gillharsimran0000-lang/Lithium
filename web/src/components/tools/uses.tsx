@@ -69,7 +69,7 @@ export default function UsesTool() {
           hint="About $17,000 a tonne in late September 2026. The price changes a lot from year to year." />
       </div>
       <div className="use-figures">
-        <Figure label="Lithium each year" value={lceT} unit=" t" note={`tonnes of lithium carbonate, the form batteries are made from (${num(liKg / 1000, 1)} t of lithium itself)`} />
+        <Figure label="Lithium each year" value={lceT} unit=" t" note={`tonnes of lithium carbonate equivalent, the form batteries are made from, if all of it were converted (${num(liKg / 1000, 1)} t of lithium itself)`} />
         <Figure label="Electric-car batteries" value={(lceT * 1000) / LCE_PER_EV_KG} unit=" a year" note="at 36.6 kg of lithium carbonate in an average battery-electric car (2023)" />
         <Figure label="Market value" value={value} dollars note="what the lithium carbonate could sell for each year at the price above" />
         <Figure label="Royalties to mineral owners" value={value * ROYALTY} dollars note="Arkansas’s 2.5% royalty, paid to the people who own the mineral rights" />
@@ -80,7 +80,7 @@ export default function UsesTool() {
             <div><dt>Fresh water</dt><dd className="num">{num((c.water_m3_per_kg * liKg) / 1000, 1)} <small>thousand m³</small></dd></div>
             <div><dt>Electricity</dt><dd className="num">{num(electricityKwh / 1000)} <small>MWh, like {num(electricityKwh / HOME_KWH_PER_YEAR)} homes</small></dd></div>
             <div><dt>Carbon dioxide</dt><dd className="num">{num((c.co2_kg_per_kg * liKg) / 1000)} <small>tonnes</small></dd></div>
-            <div><dt>Operating cost</dt><dd className="num">${num((c.cost_usd_per_kg * liKg) / 1e6, 1)} <small>million, not counting building the plant</small></dd></div>
+            <div><dt>Operating cost</dt><dd className="num">${num((c.cost_usd_per_kg * liKg) / 1e6, 1)} <small>million for energy, chemicals and sorbent, not counting building the plant, labour or making lithium carbonate</small></dd></div>
           </dl>
         </Card>
         <Card title="Who could use these numbers" kicker="Beyond the lab">

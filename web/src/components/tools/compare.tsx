@@ -138,7 +138,7 @@ export default function ComparePage() {
             </section>
             <Table head={["For each option", "Option A", "Option B"]} rows={[
               ["Share of lithium recovered", pct(a.estimate.central.recovery), pct(b.estimate.central.recovery)],
-              ["Operating cost per kilogram recovered", `$${smart(a.estimate.central.cost_usd_per_kg)}`, `$${smart(b.estimate.central.cost_usd_per_kg)}`],
+              ["Operating cost per kilogram recovered (energy, chemicals, sorbent)", `$${smart(a.estimate.central.cost_usd_per_kg)}`, `$${smart(b.estimate.central.cost_usd_per_kg)}`],
               ["Fresh water per kilogram recovered (litres)", num(a.estimate.central.water_m3_per_kg * 1000), num(b.estimate.central.water_m3_per_kg * 1000)],
               ["Electricity-equivalent energy per kilogram (kWh)", smart(a.estimate.central.energy_kwh_per_kg), smart(b.estimate.central.energy_kwh_per_kg)],
             ]} />

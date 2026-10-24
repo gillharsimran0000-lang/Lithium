@@ -60,7 +60,8 @@ def fill_brine(brine):
 def ph_adjustment(brine, ph_target):
     """NaOH needed to reach ph_target, and the Mg/Ca that precipitates as hydroxide sludge.
 
-    Ignores activity coefficients and brine buffering, which matter in real high-salinity brine.
+    Ignores activity coefficients and brine buffering, which matter in real high-salinity brine, and uses
+    25 °C constants (water and hydroxide chemistry shift at the hotter temperatures the app allows).
     Returns per litre of brine: NaOH (mol), Mg and Ca left in solution (mg/L), sludge (g).
     """
     ph0 = brine["ph"]
@@ -147,8 +148,10 @@ def evaluate(tech, brine, cond, p):
     elec_kwh = p["e_pump"] + p["e_stage"] * stages
 
     # Chemicals per m³ of brine (kg)
-    naoh_kg = adj["naoh_mol_l"] * C["M_NaOH"]  # mol/L x g/mol = g/L = kg/m³
     acid = tech != "lial_ldh"
+    # Ion sieves release one H+ for each Li+ they take up; NaOH neutralizes it to hold the pH.
+    released_h = loaded / 1000 / C["M_Li"] if acid else 0.0  # mol/L
+    naoh_kg = (adj["naoh_mol_l"] + released_h) * C["M_NaOH"]  # mol/L x g/mol = g/L = kg/m³
     hcl_kg = (loaded / C["M_Li"] * p["acid_excess"] * C["M_HCl"] / 1000) if acid else np.zeros_like(loaded)
     sorbent_kg = cond["sorbent_dose_g_l"] * stages * p["sorbent_loss"]
     # Sorbent held in the plant at any moment, per m³/hour of brine: dose x hours in contact x stages.

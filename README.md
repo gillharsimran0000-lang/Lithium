@@ -10,7 +10,7 @@ The app connects real USGS brine data to models of DLE so a user can:
 2. read each sample's chemistry, with missing values shown as missing,
 3. see a **machine-learning model** that predicts lithium concentration from geology,
 4. estimate lithium recovery for three DLE sorbents with a **literature-based chemistry model** (not ML, and labelled as such), with a live simulation that shows what each setting changes and what limits the result,
-5. let an optimizer search about 9,000 operating setups for a chosen priority,
+5. let an optimizer search thousands of operating setups (about 1,600 to 16,000, depending on the sample) for a chosen priority,
 6. compare energy, water, chemicals, emissions and waste,
 7. save scenarios, compare them, and export a CSV or a printable report,
 8. scale a setup to a year of running: lithium carbonate, electric-car batteries, market value, Arkansas's 2.5% royalty, and the water, electricity and CO₂ it would use,
@@ -141,7 +141,9 @@ Parameters come from published studies where available. Where no reliable value 
 ## Limitations
 
 * **Recovery estimates** come from a chemistry model, not from experiments on these brines.
-* **Some effects are not modelled:** temperature effects on capacity, sodium and calcium competition, brine buffering, and capital costs.
+* **Some effects are not modelled:** temperature effects on capacity, temperature effects on pH and solubility (25 °C constants are used), sodium and calcium competition, brine buffering, and activity coefficients in concentrated brine.
+* **Costs cover energy, chemicals and sorbent only:** not equipment, labour, or refining to lithium carbonate.
+* **No test against real results:** the recovery model has not been checked against experiments on Arkansas brine, and several of its key numbers (lithium affinity, uptake speed, prices) are stated assumptions.
 * **The ML model's interval is wide (±88 mg/L).** It shows regional patterns, not single-well values.
 * **Southern Arkansas only.** The app covers the USGS study area (Bradley, Calhoun, Columbia, Hempstead, Lafayette, Miller, Nevada, Ouachita and Union counties).
 * **Resource is not reserve.** The USGS 5.1–19 Mt figure is lithium in place, not what can be recovered economically.

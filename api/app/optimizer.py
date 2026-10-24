@@ -2,7 +2,7 @@
 Search operating conditions for one brine and recommend a configuration.
 
 Method: exhaustive grid search. Every combination of technology, temperature, pH, contact time,
-sorbent dose and number of stages is run through the process model (about 9,000 cases, vectorised),
+sorbent dose and number of stages is run through the process model (about 1,600 to 16,000 cases depending on the brine, vectorised),
 then filtered and ranked by the user's priority. A grid search is slower than clever optimisers, but
 it is easy to check by hand and it can never miss the best point on its own grid.
 
