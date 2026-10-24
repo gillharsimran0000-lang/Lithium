@@ -29,7 +29,7 @@ export function LoadingScreen({ ready }: { ready: boolean }) {
         <g className="atom-outer"><circle cx="106" cy="60" r="4.5" /></g>
         <circle className="atom-nucleus" cx="60" cy="60" r="9" />
       </svg>
-      <p className="loading-title">LithiumOptimize <b>AR</b></p>
+      <p className="loading-title">Lithium <b>Lens</b></p>
       <p className="loading-text">{ready ? "Ready" : "Loading USGS brine samples from southern Arkansas…"}</p>
       <span className="loading-bar" aria-hidden><span /></span>
     </div>

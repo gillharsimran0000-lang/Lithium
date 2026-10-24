@@ -27,7 +27,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
       <a href="#main" className="skip-link">Skip to content</a>
       <header className="site-header no-print">
         <div className="header-inner">
-          <a href="#overview" className="brand" aria-label="LithiumOptimize AR home"><span className="brand-mark">Li<span>3</span></span><span>LithiumOptimize <b>AR</b><small>Arkansas lithium explorer</small></span></a>
+          <a href="#overview" className="brand" aria-label="Lithium Lens home"><span className="brand-mark">Li<span>3</span></span><span>Lithium <b>Lens</b><small>Arkansas lithium explorer</small></span></a>
           <div className="header-context"><span className="status-dot" />Public data. Clearer decisions.</div>
           <a className="guide-button" href="#ml">About the predictions ↗</a>
         </div>
@@ -36,7 +36,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
         </nav>
       </header>
       <main id="main" className="page-content">{children}</main>
-      <footer className="site-footer"><span>LithiumOptimize AR · Arkansas, in perspective.</span><a href="#methodology">Data & methodology ↗</a></footer>
+      <footer className="site-footer"><span>Lithium Lens · Arkansas, in perspective.</span><a href="#methodology">Data & methodology ↗</a></footer>
       {well && active !== "#overview" && active !== "#map" && <div className="sample-dock no-print"><span><span className="status-dot" /><span className="text-ink-3">Working sample</span> <strong>{wellLabel(well)}</strong><span className="dock-county"> · {well.county ?? "Unknown"} County</span></span><a href="#map">Change sample ↑</a></div>}
     </div>
   );

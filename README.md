@@ -1,4 +1,4 @@
-# LithiumOptimize AR
+# Lithium Lens
 
 A guided, one-screen-at-a-time research workspace for southern Arkansas lithium: the nine counties of the USGS Smackover study area, their USGS sample records, and direct lithium extraction (DLE) tools.
 

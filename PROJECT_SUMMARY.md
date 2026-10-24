@@ -1,8 +1,8 @@
-# LithiumOptimize AR: full project summary, version 2 (for writing a demo script)
+# Lithium Lens: full project summary, version 2 (for writing a demo script)
 
 > **Paste everything below into ChatGPT, starting with this prompt:**
 >
-> "Write a script for a demo video of my Congressional App Challenge app, LithiumOptimize AR, for judges from Rep. Steve Womack's office. Use plain language for non-scientists. Keep it within the contest's video length limit, about 2–3 minutes, and include what to show on screen at each moment. Use only the facts below. Do not invent numbers, and follow the honesty notes at the end."
+> "Write a script for a demo video of my Congressional App Challenge app, Lithium Lens, for judges from Rep. Steve Womack's office. Use plain language for non-scientists. Keep it within the contest's video length limit, about 2–3 minutes, and include what to show on screen at each moment. Use only the facts below. Do not invent numbers, and follow the honesty notes at the end."
 
 ---
 
@@ -21,7 +21,7 @@
 
 ## 1. The one-sentence version
 
-LithiumOptimize AR is a website that shows where the lithium is in southern Arkansas's underground salt water and estimates how much could be recovered, at what cost, with how much water, energy and pollution. It then shows what that lithium could mean for Arkansas, and it uses real U.S. Geological Survey (USGS) data throughout.
+Lithium Lens is a website that shows where the lithium is in southern Arkansas's underground salt water and estimates how much could be recovered, at what cost, with how much water, energy and pollution. It then shows what that lithium could mean for Arkansas, and it uses real U.S. Geological Survey (USGS) data throughout.
 
 ## 2. The problem
 

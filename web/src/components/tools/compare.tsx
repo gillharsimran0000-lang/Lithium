@@ -89,7 +89,7 @@ export default function ComparePage() {
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.href = url;
-    link.download = "lithiumoptimize-scenarios.csv";
+    link.download = "lithium-lens-scenarios.csv";
     link.click();
     URL.revokeObjectURL(url);
   }
@@ -145,7 +145,7 @@ export default function ComparePage() {
           </>}
           <p className="text-sm text-ink-3">Actual results may differ. Costs exclude equipment, labour, and refining. These estimates need testing before use in a real project.</p>
           <details className="inline-details"><summary>Technical report & assumptions <span>+</span></summary><div className="advanced-controls flex flex-col gap-6">
-          <Card title="LithiumOptimize AR · scenario report" kicker={`Generated ${new Date().toLocaleDateString("en-US", { dateStyle: "long" })}`}>
+          <Card title="Lithium Lens · scenario report" kicker={`Generated ${new Date().toLocaleDateString("en-US", { dateStyle: "long" })}`}>
             <div className="grid gap-6 lg:grid-cols-2">
               <div>
                 <div className="label mb-2">Brine</div>

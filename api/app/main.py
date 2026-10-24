@@ -1,4 +1,4 @@
-"""LithiumOptimize AR API. Run locally with:  uvicorn app.main:app --reload --port 8000  (from api/)."""
+"""Lithium Lens API. Run locally with:  uvicorn app.main:app --reload --port 8000  (from api/)."""
 
 import os
 from typing import List, Literal, Optional
@@ -12,7 +12,7 @@ from .assumptions import CONSTANTS, FALLBACKS, SOURCES, TECHNOLOGIES, all_params
 from .optimizer import PRIORITIES, WEIGHTS, optimize
 from .process_model import estimate
 
-app = FastAPI(title="LithiumOptimize AR API", version="1.0")
+app = FastAPI(title="Lithium Lens API", version="1.0")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=os.environ.get("ALLOWED_ORIGINS", "http://localhost:3000").split(","),
