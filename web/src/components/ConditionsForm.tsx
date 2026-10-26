@@ -46,7 +46,7 @@ export function ConditionsForm({ value, onChange, brinePh, brineTemp }: {
         step={1}
         value={value.temperature_c}
         onChange={(v) => set("temperature_c", v)}
-        hint={brineTemp !== null ? `Brine arrives at ${brineTemp.toFixed(0)} °C. Higher means heating.` : "Brine temperature not measured; 60 °C assumed."}
+        hint={brineTemp !== null ? `Brine arrives at ${brineTemp.toFixed(0)} °C. Higher means heating.` : "Brine temperature not measured; 60 °C assumed, near the median of the 2022 USGS samples."}
       />
       <Slider
         label="Target pH"
@@ -55,7 +55,7 @@ export function ConditionsForm({ value, onChange, brinePh, brineTemp }: {
         step={0.1}
         value={Math.max(value.ph_target, phMin)}
         onChange={(v) => set("ph_target", Math.round(v * 10) / 10)}
-        hint={`Brine pH is ${brinePh?.toFixed(2) ?? "not measured (6.0 assumed)"}. Raising it uses sodium hydroxide.`}
+        hint={`Brine pH is ${brinePh?.toFixed(2) ?? "not measured (6.0 assumed, near the 2022 USGS sample median)"}. Raising it uses sodium hydroxide.`}
       />
       <Slider label="Contact time" unit="h" min={0.25} max={12} step={0.25} value={value.contact_time_h} onChange={(v) => set("contact_time_h", v)} />
       <Slider label="Sorbent dose" unit="g/L" min={1} max={40} step={1} value={value.sorbent_dose_g_l} onChange={(v) => set("sorbent_dose_g_l", v)} />

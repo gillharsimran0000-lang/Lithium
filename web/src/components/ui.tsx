@@ -7,7 +7,7 @@ export type Provenance = "measured" | "published" | "assumption" | "ml" | "model
 const PROV: Record<Provenance, { label: string; cls: string; title: string }> = {
   measured: { label: "Measured", cls: "text-emerald border-emerald/50", title: "Laboratory or field measurement" },
   published: { label: "Published", cls: "text-teal border-teal/50", title: "Value reported in a cited source" },
-  assumption: { label: "Assumption", cls: "text-amber border-amber/50 border-dashed", title: "Our stated estimate; no reliable published value" },
+  assumption: { label: "Assumption", cls: "text-amber border-amber/50 border-dashed", title: "Our estimate, based on the source listed with it" },
   ml: { label: "ML prediction", cls: "text-sky border-sky/50", title: "Predicted by a trained machine-learning model" },
   model: { label: "Literature model", cls: "text-amber border-amber/50", title: "Calculated by the literature-based process model, not measured" },
   missing: { label: "Not measured", cls: "text-slate border-slate/60", title: "No measurement available" },

@@ -3,13 +3,13 @@ import type { Sample, Technology } from "./types";
 export const pct = (x: number, digits = 1) => `${(x * 100).toFixed(digits)}%`;
 
 export function num(x: number | null | undefined, digits = 0) {
-  if (x === null || x === undefined || Number.isNaN(x)) return "—";
+  if (x === null || x === undefined || Number.isNaN(x)) return "n/a";
   return x.toLocaleString("en-US", { minimumFractionDigits: digits, maximumFractionDigits: digits });
 }
 
 /** Pick sensible precision for a value of any size. */
 export function smart(x: number | null | undefined) {
-  if (x === null || x === undefined || Number.isNaN(x)) return "—";
+  if (x === null || x === undefined || Number.isNaN(x)) return "n/a";
   const a = Math.abs(x);
   if (a < 0.0005) return "0";
   if (a >= 100) return num(x, 0);

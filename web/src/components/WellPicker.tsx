@@ -18,7 +18,7 @@ export function WellPicker({ value, onChange, label = "Brine sample" }: {
       <select value={current} onChange={(e) => (onChange ?? selectWell)(e.target.value)} className="min-h-[40px] w-full">
         {sorted.map((w) => (
           <option key={w.id} value={w.id}>
-            {wellLabel(w)} — lithium {w.chemistry.Li.qualifier ?? ""}
+            {wellLabel(w)}, lithium {w.chemistry.Li.qualifier ?? ""}
             {w.chemistry.Li.value} mg/L{w.dataset.startsWith("USGS 2022") ? " (2022)" : w.date ? ` (${w.date.slice(0, 4)})` : ""}
           </option>
         ))}

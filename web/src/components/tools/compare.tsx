@@ -199,7 +199,7 @@ export default function ComparePage() {
           <Card title="Limitations">
             <ul className="list-disc space-y-1.5 pl-5 text-sm text-ink-2">
               <li>Recovery comes from a literature-based chemistry model, not from experiments on this brine and not from machine learning.</li>
-              <li>Many model parameters are stated assumptions; the uncertainty band reflects their ranges, not every possible error.</li>
+              <li>Many model parameters are assumptions based on lab studies or market reports, each listed with its source on the Methodology page; the uncertainty band reflects their ranges, not every possible error.</li>
               <li>Costs include energy, chemicals and sorbent only: no equipment, labour, or refining to battery-grade product.</li>
               <li>Brine chemistry is measured but sampling dates vary; historical samples may not reflect today&apos;s brine.</li>
               <li>No setup here is shown to be industrially optimal. Laboratory and pilot testing would be required.</li>

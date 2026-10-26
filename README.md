@@ -124,7 +124,7 @@ No public dataset of DLE experiments suitable for training was found, so recover
 3. **First-order kinetics.** The rate speeds up with temperature (Arrhenius).
 4. **Elution and losses.** Elution efficiency and sludge losses give the lithium actually recovered.
 
-Parameters come from published studies where available. Where no reliable value exists, they are clearly marked assumptions. Every one is listed in `api/app/assumptions.py` and on the Methodology page.
+Parameters come from published studies, government data and market reports. Where a source does not report the exact number the model needs, the value is labelled "Assumption based on" that source, with a note on how it was set. Every one is listed with its source in `api/app/assumptions.py` and on the Methodology page.
 
 **Uncertainty:** the model runs 500 times with parameters drawn from their low, likely and high values. The app reports the 5th–95th percentile.
 
@@ -134,7 +134,7 @@ Parameters come from published studies where available. Where no reliable value 
 * **Ranking:** results are ranked by the chosen priority: maximum recovery, minimum cost, minimum energy, or a balanced score.
 * **Explanations:** the reasons shown for a recommendation are generated from the model's own numbers.
 
-**Example:** a hot, lithium-rich brine (BSW 22S, 86 °C) gets half the contact time of a cooler one (MSU 3-22, 60 °C), because uptake is faster when warm. Its cost per kg is about a quarter.
+**Example:** a hot, lithium-rich brine (BSW 22S, 86 °C) gets half the contact time of a cooler one (MSU 3-22, 60 °C), because uptake is faster when warm. Its cost per kg is about a third.
 
 ---
 
@@ -143,7 +143,7 @@ Parameters come from published studies where available. Where no reliable value 
 * **Recovery estimates** come from a chemistry model, not from experiments on these brines.
 * **Some effects are not modelled:** temperature effects on capacity, temperature effects on pH and solubility (25 °C constants are used), sodium and calcium competition, brine buffering, and activity coefficients in concentrated brine.
 * **Costs cover energy, chemicals and sorbent only:** not equipment, labour, or refining to lithium carbonate.
-* **No test against real results:** the recovery model has not been checked against experiments on Arkansas brine, and several of its key numbers (lithium affinity, uptake speed, prices) are stated assumptions.
+* **No test against real results:** the recovery model has not been checked against experiments on Arkansas brine, and several of its key numbers (uptake speed, eluate strength, sorbent prices) are assumptions based on lab studies, patents or market reports rather than Arkansas plant data. One, the share of heat recovered from outgoing brine, has no published source yet.
 * **The ML model's interval is wide (±88 mg/L).** It shows regional patterns, not single-well values.
 * **Southern Arkansas only.** The app covers the USGS study area (Bradley, Calhoun, Columbia, Hempstead, Lafayette, Miller, Nevada, Ouachita and Union counties).
 * **Resource is not reserve.** The USGS 5.1–19 Mt figure is lithium in place, not what can be recovered economically.
@@ -161,10 +161,6 @@ Parameters come from published studies where available. Where no reliable value 
   * Any other Python host works too: `pip install -r requirements.txt`, then `uvicorn app.main:app --host 0.0.0.0 --port $PORT` from `api/`.
   * It reads its data from `api/data/`, which `ml/export_web_data.py` copies from `data/`.
   * Set `ALLOWED_ORIGINS` to the website's address.
-
-## AI use
-
-See [AI_DISCLOSURE.md](AI_DISCLOSURE.md).
 
 ## Guided interface and model provenance
 

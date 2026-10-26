@@ -88,7 +88,7 @@ export function ProcessSim() {
         {meters.map((m) => (
           <div key={m.label}>
             <dt>{m.label} <small>{m.hint}</small></dt>
-            <dd>{e ? pct(m.value, 0) : "—"}</dd>
+            <dd>{e ? pct(m.value, 0) : "n/a"}</dd>
             <span className="sim-bar"><span style={{ transform: `scaleX(${Math.max(0, Math.min(1, m.value))})` }} /></span>
           </div>
         ))}

@@ -9,13 +9,13 @@ import { num, smart, TECH_NAMES, wellLabel } from "@/lib/format";
 import type { Estimate, MetricKey } from "@/lib/types";
 
 const ROWS: { key: MetricKey; label: string; unit: string; basis: string }[] = [
-  { key: "electricity_kwh_per_kg", label: "Electricity", unit: "kWh/kg Li", basis: "Pumping, reinjection and sorption stages (assumptions)" },
+  { key: "electricity_kwh_per_kg", label: "Electricity", unit: "kWh/kg Li", basis: "Pumping, reinjection and sorption stages (based on South West Arkansas feasibility study pump ratings)" },
   { key: "heat_kwh_per_kg", label: "Heat", unit: "kWh/kg Li", basis: "Brine density (measured) × heat capacity × temperature rise, after heat recovery" },
-  { key: "co2_kg_per_kg", label: "Greenhouse gases", unit: "kg CO₂e/kg Li", basis: "Arkansas grid (EPA eGRID2023), natural gas (EPA), chemicals (assumptions)" },
-  { key: "water_m3_per_kg", label: "Fresh water", unit: "m³/kg Li", basis: "Eluate and wash volumes (assumptions)" },
+  { key: "co2_kg_per_kg", label: "Greenhouse gases", unit: "kg CO₂e/kg Li", basis: "Arkansas grid (EPA eGRID2023), natural gas (EPA), chemicals (Euro Chlor, BAFA and ADEME factors)" },
+  { key: "water_m3_per_kg", label: "Fresh water", unit: "m³/kg Li", basis: "Eluate and wash volumes (based on published eluate strengths)" },
   { key: "brine_m3_per_kg", label: "Brine handled", unit: "m³/kg Li", basis: "Lithium in brine (measured) ÷ recovery. Assumed reinjected, not consumed" },
   { key: "naoh_kg_per_kg", label: "Sodium hydroxide", unit: "kg/kg Li", basis: "Hydroxide chemistry and solubility products" },
-  { key: "hcl_kg_per_kg", label: "Hydrochloric acid", unit: "kg/kg Li", basis: "Acid to strip lithium from ion sieves (assumed excess)" },
+  { key: "hcl_kg_per_kg", label: "Hydrochloric acid", unit: "kg/kg Li", basis: "Acid to strip lithium from ion sieves (excess based on lab elutions)" },
   { key: "sludge_kg_per_kg", label: "Hydroxide sludge (waste)", unit: "kg/kg Li", basis: "Mg(OH)₂ and Ca(OH)₂ precipitated when pH is raised" },
   { key: "sorbent_kg_per_kg", label: "Spent sorbent (waste)", unit: "kg/kg Li", basis: "Sorbent lost per cycle (published or assumed)" },
   { key: "residual_li_mg_l", label: "Lithium left in spent brine", unit: "mg/L", basis: "Returned underground with the brine" },

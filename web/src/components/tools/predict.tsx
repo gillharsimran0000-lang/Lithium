@@ -10,9 +10,9 @@ import { api } from "@/lib/api";
 import { num, pct, smart, TECH_NAMES, wellLabel } from "@/lib/format";
 
 const ASSUMED_LABEL: Record<string, string> = {
-  temp_c: "brine temperature (60 °C assumed)",
-  ph: "brine pH (6.0 assumed)",
-  specific_gravity: "brine density (specific gravity 1.15 assumed)",
+  temp_c: "brine temperature (60 °C assumed, near the median of the 2022 USGS samples)",
+  ph: "brine pH (6.0 assumed, near the median of the 2022 USGS samples)",
+  specific_gravity: "brine density (specific gravity 1.19 assumed, the median of the 2022 USGS samples)",
 };
 
 export default function PredictPage() {
@@ -72,7 +72,7 @@ export default function PredictPage() {
         found no public dataset like that (a 2023 review in <em>Nature Reviews Earth &amp; Environment</em> notes only
         about 30% of DLE tests even used real brine). So recovery is calculated from chemistry: a competitive adsorption
         isotherm, a mass balance, reaction kinetics and hydroxide solubility, with parameters from published studies or
-        stated assumptions. See <a href="#methodology" className="underline">Methodology</a>.
+        assumptions based on them, each with its source. See <a href="#methodology" className="underline">Methodology</a>.
       </Notice>
 
       <div className="mt-6 grid gap-6 xl:grid-cols-[360px_1fr]">

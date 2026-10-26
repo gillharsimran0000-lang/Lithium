@@ -93,7 +93,7 @@ export default function MapPage() {
         <p aria-live="polite">{wellsLoaded ? `${filtered.length.toLocaleString()} matching samples${county ? ` in ${county} County` : " in the study area"}` : "Loading USGS sample records…"}<span>County coverage does not imply lithium potential.</span></p>
         <button className="quiet-link" onClick={() => { setCounty(""); setLevel("any"); setMinLi(0); setDataset("all"); setPicked([]); setProbe(null); }}>Reset filters ↺</button>
       </div>
-      {wellsLoaded && filtered.length === 0 && <div className="mb-4 rounded-lg border border-line-strong bg-panel-2 p-4" role="status"><strong>No matching sample records{county ? ` in ${county} County` : ""}.</strong><p className="mt-1 text-sm text-ink-2">Try “All samples” or reset the filters. No records means no evidence in this dataset—not zero lithium. The working sample below remains unchanged.</p></div>}
+      {wellsLoaded && filtered.length === 0 && <div className="mb-4 rounded-lg border border-line-strong bg-panel-2 p-4" role="status"><strong>No matching sample records{county ? ` in ${county} County` : ""}.</strong><p className="mt-1 text-sm text-ink-2">Try “All samples” or reset the filters. No records means no evidence in this dataset, not zero lithium. The working sample below remains unchanged.</p></div>}
       <div className="grid gap-6 xl:grid-cols-[1fr_340px]">
         <div className="flex flex-col gap-4">
           <div className="relative h-[380px] sm:h-[470px] overflow-hidden rounded-lg border border-line">
@@ -181,7 +181,7 @@ export default function MapPage() {
                     onClick={() => setPicked([s.id, ...picked.filter((p) => p !== s.id)])}
                     className="cursor-pointer rounded px-2 py-1.5 text-left text-sm text-ink-2 hover:bg-panel-2"
                   >
-                    {wellLabel(s)} · {s.date ?? "date not recorded"} · Li {s.chemistry.Li.value ?? "—"}
+                    {wellLabel(s)} · {s.date ?? "date not recorded"} · Li {s.chemistry.Li.value ?? "n/a"}
                   </button>
                 ))}
               </div>
