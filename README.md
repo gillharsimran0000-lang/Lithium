@@ -13,7 +13,7 @@ The app connects real USGS brine data to models of DLE so a user can:
 5. let an optimizer search thousands of operating setups (about 1,600 to 16,000, depending on the sample) for a chosen priority,
 6. compare energy, water, chemicals, emissions and waste,
 7. save scenarios, compare them, and export a CSV or a printable report,
-8. scale a setup to a year of running: lithium carbonate, electric-car batteries, market value, Arkansas's 2.5% royalty, and the water, electricity and CO₂ it would use,
+8. scale a setup to a year of running: lithium carbonate, electric-car batteries, the value of the raw lithium at today's price (not a forecast of later sales), Arkansas's 2.5% royalty, and the water, electricity and CO₂ it would use,
 9. see what lithium is used for worldwide and why a U.S. source matters (USGS Mineral Commodity Summaries 2026),
 10. read plain answers to common questions about lithium in Arkansas.
 

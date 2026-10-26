@@ -71,7 +71,7 @@ export default function UsesTool() {
       <div className="use-figures">
         <Figure label="Lithium each year" value={lceT} unit=" t" note={`tonnes of lithium carbonate equivalent, the form batteries are made from, if all of it were converted (${num(liKg / 1000, 1)} t of lithium itself)`} />
         <Figure label="Electric-car batteries" value={(lceT * 1000) / LCE_PER_EV_KG} unit=" a year" note="at 36.6 kg of lithium carbonate in an average battery-electric car (2023)" />
-        <Figure label="Market value" value={value} dollars note="what the lithium carbonate could sell for each year at the price above" />
+        <Figure label="Value of the lithium" value={value} dollars note="what this much raw lithium is worth today at the price above. It is not a forecast of future prices or sales, and it leaves out anything made from it later, like batteries." />
         <Figure label="Royalties to mineral owners" value={value * ROYALTY} dollars note="Arkansas’s 2.5% royalty, paid to the people who own the mineral rights" />
       </div>
       <div className="grid gap-6 lg:grid-cols-2">
@@ -92,7 +92,7 @@ export default function UsesTool() {
         </Card>
       </div>
       <p className="source-note">
-        Research estimates from this app&rsquo;s chemistry model, not company forecasts. Lithium in the ground is not the same as lithium that can be recovered at a profit.
+        Research estimates from this app&rsquo;s chemistry model, not company forecasts. Dollar figures are the value of the raw lithium at the chosen price on the day, not what it could sell for later. Lithium in the ground is not the same as lithium that can be recovered at a profit.
         Sources: royalty, <a href="https://www.arkansasbusiness.com/article/arkansas-lithium-royalty-rate-set-at-2-5-percent/" target="_blank" rel="noreferrer">Arkansas Business</a> (Arkansas Oil and Gas Commission, May 2025);
         lithium per car, <a href="https://www.adamasintel.com/lithium-average-phev-up-20-year-on-year/" target="_blank" rel="noreferrer">Adamas Intelligence</a>;
         price, <a href="https://epignosisinsights.com/reports/global-lithium-carbonate-price-tracker" target="_blank" rel="noreferrer">Epignosis Insights</a> and <a href="https://www.benchmarkminerals.com/lithium/prices" target="_blank" rel="noreferrer">Benchmark Mineral Intelligence</a>;
